@@ -1,1 +1,65 @@
-ECHO is on.
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-size: 5rem;
+    color: lightblue;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+#message {
+    font-size: 2.5rem;
+    font-weight: 800;
+    text-align: center;
+    color: gold;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.tile {
+    height: 175px;
+    width: 175px;
+    font-size: 5rem;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: black;
+}
+
+.tile:hover {
+    background: #eee;
+}
+
+.tile:not(:nth-last-child(-n + 3)) {
+    border-bottom: 4px solid lightblue;
+}
+
+.tile:not(:nth-child(3n)) {
+    border-right: 4px solid lightblue;
+}
+
