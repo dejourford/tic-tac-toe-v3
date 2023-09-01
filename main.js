@@ -1,3 +1,4 @@
+const tile = document.querySelectorAll('.tile')
 let message = document.querySelector('#message')
 message.textContent = 'Enter Players to Start Game.'
 
@@ -40,7 +41,7 @@ form.addEventListener('submit', function (e) {
 function playGame() {
     let playerTurn = p1
     message.textContent = `It is ${playerTurn.name}'s Turn.`
-    const tile = document.querySelectorAll('.tile')
+    // const tile = document.querySelectorAll('.tile')
     tile.forEach((tile) => {
         tile.addEventListener('click', function(e) {
             const clickedTarget = e.target
@@ -52,11 +53,12 @@ function playGame() {
             }
             else {
                 gameboard[position] = playerTurn.marker
+                updateBoard()
                 playerTurn = playerTurn === p1 ? p2 : p1
                 message.textContent = `It is ${playerTurn.name}'s Turn.`
             }
             
-            console.log(gameboard)
+            
         })
     })
         
@@ -66,6 +68,19 @@ function playGame() {
 
 
 // update board
+function updateBoard() {
+    console.log('the board has been updated')
+    console.log(gameboard)
+    for (let i = 0; i < gameboard.length; i++) {
+        const playerMarker = gameboard[i]
+        const position = i
+        console.log(playerMarker, i)
+        const tile = document.querySelector(`.tile[data-index='${i}']`)
+        console.log(tile)
+        tile.innerHTML = playerMarker
+    }
+  
+}
 // check for winner
 // switch turns
 
