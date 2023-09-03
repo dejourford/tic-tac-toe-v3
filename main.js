@@ -47,13 +47,14 @@ function playGame() {
             const clickedTarget = e.target
             const position = clickedTarget.getAttribute('data-index')
             console.log(position)
-            // tile.innerHTML = playerTurn.marker
             if (gameboard[position]) {
                 console.log('nope')
             }
             else {
                 gameboard[position] = playerTurn.marker
                 updateBoard()
+                checkForWinnner()
+                // switch turns
                 playerTurn = playerTurn === p1 ? p2 : p1
                 message.textContent = `It is ${playerTurn.name}'s Turn.`
             }
@@ -81,8 +82,29 @@ function updateBoard() {
     }
   
 }
+
 // check for winner
-// switch turns
+function checkForWinnner() {
+    const winCombinations = [
+        [0,1,2],
+        [3,4,5],
+        [6,7,8],
+        [0,3,6],
+        [1,4,7],
+        [2,5,8],
+        [0,4,8],
+        [2,4,6]
+    ]
+    console.log(winCombinations)
+    console.log(gameboard)
+    for (let i = 0; i < winCombinations.length; i++) {
+        console.log(winCombinations[i])
+        for (let i = 0; i < winCombinations[i].length; i ++){
+            console.log(winCombinations[i][i])
+        }
+    }
+}
+
 
 Gameboard()
 
