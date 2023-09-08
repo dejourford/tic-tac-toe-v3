@@ -41,7 +41,6 @@ form.addEventListener('submit', function (e) {
 function playGame() {
     let playerTurn = p1
     message.textContent = `It is ${playerTurn.name}'s Turn.`
-    // const tile = document.querySelectorAll('.tile')
     tile.forEach((tile) => {
         tile.addEventListener('click', function(e) {
             const clickedTarget = e.target
@@ -138,6 +137,11 @@ function checkForWinnner() {
     
 }
 
+
+// need to create functionality for game to end after winner
+// has been declared.
+// ask if players want to start new game
+// if yes, clear board
 
 Gameboard()
 
