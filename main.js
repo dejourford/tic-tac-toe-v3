@@ -120,12 +120,12 @@ function checkForWinnner() {
             const arraysMatch2 = combination.every((value, index) => value === gameboardToArrayP2[index])
             if (arraysMatch1) {
                 console.log('winner')
-                message.textContent = 'PLAYER 1 HAS WON!'
+                message.textContent = `${p1.name} HAS WON!`
                 return
             }
             else if (arraysMatch2) {
                 console.log('winner')
-                message.textContent = 'PLAYER 2 HAS WON!'
+                message.textContent = `${p2.name} HAS WON!`
                 return
             }
 
