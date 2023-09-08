@@ -97,10 +97,18 @@ function checkForWinnner() {
     ]
     console.log(winCombinations)
     console.log(gameboard)
+
+    // need to create an array of placements of current board
+    // and assign it to a variable
+    // take that variable and compare it to win combinations
+
+    let gameboardToArray = []
+    for ()
+
     for (let i = 0; i < winCombinations.length; i++) {
         console.log(winCombinations[i])
-        for (let i = 0; i < winCombinations[i].length; i ++){
-            console.log(winCombinations[i][i])
+        for (let i = 0; i < gameboard.length; i ++){
+            console.log(gameboard.indexOf(gameboard[i]))
         }
     }
 }
